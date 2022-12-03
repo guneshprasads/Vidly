@@ -14,17 +14,7 @@ namespace Vidly_2nd_try.Controllers
         public ActionResult action1()
         {
             var movie = new Movie() { Name = "Kantara" };
-            var customers = new List<Customer>() 
-            {
-                new Customer{ Name = "Yash"},
-                new Customer{ Name = "Rajkumar"}
-            };
-            var viewmodel = new RandomMovieViewModel()
-            {
-                Movie = movie,
-                Customer = customers
-            };
-            return View(viewmodel);
+            return View(movie);
         }
     }
 }

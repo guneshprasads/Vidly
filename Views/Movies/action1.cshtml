@@ -1,14 +1,9 @@
-﻿@model Vidly_2nd_try.ViewModels.RandomMovieViewModel
+﻿@model Vidly_2nd_try.Models.Movie
 @{
     ViewBag.Title = "action1";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>@Model.Movie.Name</h2>
-@foreach (var i in Model.Customer)
-{
-    <p>
-        @i.Name
-    </p>
-}
+<h2>@Model.Name</h2>
+
 
