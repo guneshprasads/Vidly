@@ -12,34 +12,31 @@
 }
 else
 {
-    <table>
-        <thead>
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>
+                Customers
+            </th>
+            <th>
+                Membership Type
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var customer in Model)
+        {
             <tr>
-                <th>
-                    Customers
-                </th>
-                <th></th>
-                <th>
-                    Membership Type
-                </th>
+                <td>
+                    @Html.ActionLink(customer.Name, "Details", "Customer", new { id = customer.Id }, null)
+                </td>
+                
+                <td>
+                    @customer.MembershipType.Name
+                </td>
             </tr>
-        </thead>
-        <tbody>
-            @foreach (var customer in Model)
-            {
-                <tr>
-                    <td>
-                        @Html.ActionLink(customer.Name,"Details","Customer",new { id = customer.Id },null)
-                    </td>
-                    <td>
-
-                    </td>
-                    <td>
-                        @customer.MembershipType.Name
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
+        }
+    </tbody>
+</table>
 }
 

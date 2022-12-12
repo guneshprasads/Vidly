@@ -7,9 +7,7 @@ namespace Vidly_2nd_try.Migrations
     {
         public override void Up()
         {
-            Sql("UPDATE Customer SET Dateofbirth = '25/04/1998' WHERE Id=1");
-            Sql("UPDATE Customer SET Dateofbirth = '26/04/1998' WHERE Id=2");
-            Sql("UPDATE Customer SET Dateofbirth = '26/05/1999' WHERE Id=3");
+            //updated directly through database
         }
         
         public override void Down()
