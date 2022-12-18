@@ -13,5 +13,7 @@ namespace Vidly_2nd_try.Models
         public byte DiscountRate { get; set; }
         public string Name { get; set; }
 
+        public static readonly byte Unknown = 0;
+        public static readonly byte PayAsYouGo = 1;
     }
 }

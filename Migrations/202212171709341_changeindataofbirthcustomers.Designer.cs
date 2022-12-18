@@ -7,13 +7,13 @@ namespace Vidly_2nd_try.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class needtodeletegenerid : IMigrationMetadata
+    public sealed partial class changeindataofbirthcustomers : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(needtodeletegenerid));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(changeindataofbirthcustomers));
         
         string IMigrationMetadata.Id
         {
-            get { return "202212170941422_needtodeletegenerid"; }
+            get { return "202212171709341_changeindataofbirthcustomers"; }
         }
         
         string IMigrationMetadata.Source

@@ -30,14 +30,25 @@ namespace Vidly_2nd_try.Controllers
             var generlist = _context.Genre.ToList();
             var viewmodel = new RandomMovieViewModel()
             {
+                Movie = new Movie(),
                 Genre = generlist
             };
             return View(viewmodel);
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Create(Movie movie)
         {
+            if (!ModelState.IsValid)
+            {
+                var viewmodel = new RandomMovieViewModel()
+                {
+                    Movie = movie,
+                    Genre = _context.Genre.ToList()
+                };
+                return View("New", viewmodel);
+            }
             if (movie.Id == 0)
             {
                 _context.Movies.Add(movie);

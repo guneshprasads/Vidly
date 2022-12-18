@@ -3,14 +3,16 @@ namespace Vidly_2nd_try.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class needtodeletegenerid : DbMigration
+    public partial class validationformoviemodel : DbMigration
     {
         public override void Up()
         {
+            AlterColumn("dbo.Movies", "Name", c => c.String(nullable: false, maxLength: 255));
         }
         
         public override void Down()
         {
+            AlterColumn("dbo.Movies", "Name", c => c.String());
         }
     }
 }

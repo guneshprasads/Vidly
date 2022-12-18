@@ -29,14 +29,26 @@ namespace Vidly_2nd_try.Controllers
             var memberlist = _context.MembershipTypes.ToList();
             var viewmodel = new NewCustomerViewModel()
             {
+                Customer = new Customer(),
                 MembershipTypes = memberlist
             };
             return View(viewmodel);
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Create(Customer customer)
         {
+            if (!ModelState.IsValid)
+            {
+                var viewmodel = new NewCustomerViewModel()
+                {
+                    Customer = customer,
+                    MembershipTypes = _context.MembershipTypes.ToList()
+                };
+                return View("New", viewmodel);
+            }
+
             if (customer.Id == 0)
             {
                 _context.Customers.Add(customer);
