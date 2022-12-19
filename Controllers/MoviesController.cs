@@ -30,7 +30,7 @@ namespace Vidly_2nd_try.Controllers
             var generlist = _context.Genre.ToList();
             var viewmodel = new RandomMovieViewModel()
             {
-                Movie = new Movie(),
+                //Movie = new Movie(),
                 Genre = generlist
             };
             return View(viewmodel);
@@ -42,9 +42,8 @@ namespace Vidly_2nd_try.Controllers
         {
             if (!ModelState.IsValid)
             {
-                var viewmodel = new RandomMovieViewModel()
+                var viewmodel = new RandomMovieViewModel(movie)
                 {
-                    Movie = movie,
                     Genre = _context.Genre.ToList()
                 };
                 return View("New", viewmodel);
@@ -97,9 +96,8 @@ namespace Vidly_2nd_try.Controllers
             {
                 return HttpNotFound();
             }
-            var viewModel = new RandomMovieViewModel()
+            var viewModel = new RandomMovieViewModel(movie)
             {
-                Movie = movie,
                 Genre = _context.Genre.ToList()
             };
             return View("New", viewModel);

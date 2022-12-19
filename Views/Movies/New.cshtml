@@ -8,31 +8,31 @@
 @using (Html.BeginForm("Create", "Movies"))
 {
     <div class="form-group">
-        @Html.LabelFor(m => m.Movie.Name)
-        @Html.TextBoxFor(m => m.Movie.Name, new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.Movie.Name)
+        @Html.LabelFor(m => m.Name)
+        @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Name)
     </div>
     <div class="form-group">
-        @Html.LabelFor(m => m.Movie.ReleaseDate)
-        @Html.TextBoxFor(m => m.Movie.ReleaseDate, "{0:d MMM yyyy}", new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.Movie.ReleaseDate)
+        @Html.LabelFor(m => m.ReleaseDate)
+        @Html.TextBoxFor(m => m.ReleaseDate, "{0:d MMM yyyy}", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.ReleaseDate)
     </div>
     <div class="form-group">
-        @Html.LabelFor(m => m.Movie.GenerId)
-        @Html.DropDownListFor(m => m.Movie.GenerId, new SelectList(Model.Genre, "Id", "Name"), "Select Gener Type", new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.Movie.GenerId)
+        @Html.LabelFor(m => m.GenerId)
+        @Html.DropDownListFor(m => m.GenerId, new SelectList(Model.Genre, "Id", "Name"), "Select Gener Type", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.GenerId)
     </div>
     <div class="form-group">
-        @Html.LabelFor(m => m.Movie.NumberInStock)
-        @Html.TextBoxFor(m => m.Movie.NumberInStock, new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.Movie.NumberInStock)
+        @Html.LabelFor(m => m.NumberInStock)
+        @Html.TextBoxFor(m => m.NumberInStock, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.NumberInStock)
     </div>
     <div class="form-group">
-        @Html.LabelFor(m => m.Movie.DateAdded)
-        @Html.TextBoxFor(m => m.Movie.DateAdded, "{0:d MMM yyyy}", new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.Movie.DateAdded)
+        @Html.LabelFor(m => m.DateAdded)
+        @Html.TextBoxFor(m => m.DateAdded, "{0:d MMM yyyy}", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.DateAdded)
     </div>
-    @Html.HiddenFor(m => m.Movie.Id)
+    @Html.HiddenFor(m => m.Id)
     @Html.AntiForgeryToken()
     <button class="btn btn-primary" type="submit">Submit</button>
 }
